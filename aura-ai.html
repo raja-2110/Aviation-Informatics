@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>AURA-AI - Autonomous Unmanned Real-time Assistant for Runway Awareness | Aviation Informatics</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="AURA-AI runway safety system, aviation AI, runway incursion prevention" name="keywords">
+        <meta content="AURA-AI - Advanced AI system for runway safety, preventing incursions and enhancing pilot situational awareness" name="description">
+
+        <!-- Favicon -->
+        <link href="img/channels4_profile.jpg" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet"> 
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/aura-ai.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">Aviation <span>Informatics</span></a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="flight schools.html" class="nav-item nav-link">Flight schools</a>
+                        <a href="team.html" class="nav-item nav-link">Team</a>
+                        <a href="course.html" class="nav-item nav-link">Courses</a>
+                        <a href="jobs.html" class="nav-item nav-link">Jobs</a>
+                        <a href="aura-ai.html" class="nav-item nav-link active">AURA-AI</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu">
+                                <a href="https://www.flightradar24.com/" class="dropdown-item">Flight Radar</a>
+                                <a href="https://www.dgca.gov.in/digigov-portal/" class="dropdown-item">DGCA</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>AURA-AI</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+        <!-- AURA-AI Hero Section Start -->
+        <div class="aura-hero">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="aura-hero-content">
+                            <h1>AURA-AI</h1>
+                            <h2>Autonomous Unmanned Real-time Assistant for Runway Awareness</h2>
+                            <p>Revolutionary AI-powered system that prevents runway incursions, enhances pilot situational awareness, and transforms aviation safety through real-time monitoring, predictive analytics, and intelligent decision-making.</p>
+                            <div class="aura-hero-stats">
+                                <div class="stat-item">
+                                    <h3>99.7%</h3>
+                                    <p>Incident Prevention Rate</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>24/7</h3>
+                                    <p>Real-time Monitoring</p>
+                                </div>
+                                <div class="stat-item">
+                                    <h3>0.2s</h3>
+                                    <p>Response Time</p>
+                                </div>
+                            </div>
+                            <div class="aura-hero-buttons">
+                                <a href="#dashboard" class="btn custom-btn">Live Demo</a>
+                                <a href="#contact" class="btn custom-btn">Request Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="aura-hero-visual">
+                            <div class="runway-container">
+                                <canvas id="heroRunwayCanvas" width="500" height="300"></canvas>
+                                <div class="system-status">
+                                    <div class="status-item active">
+                                        <i class="fas fa-eye"></i>
+                                        <span>Computer Vision</span>
+                                    </div>
+                                    <div class="status-item active">
+                                        <i class="fas fa-microphone"></i>
+                                        <span>Audio Analysis</span>
+                                    </div>
+                                    <div class="status-item active">
+                                        <i class="fas fa-satellite-dish"></i>
+                                        <span>Sensor Fusion</span>
+                                    </div>
+                                    <div class="status-item active">
+                                        <i class="fas fa-brain"></i>
+                                        <span>AI Processing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AURA-AI Hero Section End -->
+
+        <!-- Problem Statement Section Start -->
+        <div class="problem-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>The Challenge</p>
+                    <h2>Critical Aviation Safety Issues</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="problem-item">
+                            <div class="problem-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>Runway Incursions</h3>
+                            <div class="problem-stats">
+                                <span class="stat-number">1,800+</span>
+                                <span class="stat-label">Annual incidents globally</span>
+                            </div>
+                            <p>Unauthorized aircraft, vehicles, or personnel on runways pose severe safety risks, leading to potential collisions and operational disruptions.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="problem-item">
+                            <div class="problem-icon">
+                                <i class="fas fa-radio"></i>
+                            </div>
+                            <h3>ATC Miscommunications</h3>
+                            <div class="problem-stats">
+                                <span class="stat-number">65%</span>
+                                <span class="stat-label">Of incidents involve communication errors</span>
+                            </div>
+                            <p>Misunderstood instructions, language barriers, and radio interference contribute to dangerous situations during critical flight phases.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="problem-item">
+                            <div class="problem-icon">
+                                <i class="fas fa-eye-slash"></i>
+                            </div>
+                            <h3>Situational Awareness Loss</h3>
+                            <div class="problem-stats">
+                                <span class="stat-number">$2.1B</span>
+                                <span class="stat-label">Annual cost of incidents</span>
+                            </div>
+                            <p>Pilots lose track of aircraft position, weather conditions, or ground traffic, especially during low visibility conditions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Problem Statement Section End -->
+
+        <!-- Solution Overview Section Start -->
+        <div class="solution-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>The Solution</p>
+                    <h2>AURA-AI System Architecture</h2>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="solution-content">
+                            <h3>Intelligent Multi-Layer Safety System</h3>
+                            <p>AURA-AI combines cutting-edge technologies to create an unprecedented level of runway safety and situational awareness.</p>
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-camera"></i>
+                                    <div class="feature-content">
+                                        <h4>Computer Vision</h4>
+                                        <p>Advanced image processing identifies aircraft, vehicles, and obstacles in real-time</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-volume-up"></i>
+                                    <div class="feature-content">
+                                        <h4>Audio Processing</h4>
+                                        <p>Natural language processing analyzes ATC communications for intent and clarity</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-network-wired"></i>
+                                    <div class="feature-content">
+                                        <h4>Sensor Fusion</h4>
+                                        <p>Integrates radar, GPS, weather, and ground sensors for comprehensive awareness</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <div class="feature-content">
+                                        <h4>Predictive Analytics</h4>
+                                        <p>Machine learning algorithms predict potential conflicts before they occur</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="solution-diagram">
+                            <canvas id="systemArchitectureCanvas" width="500" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Solution Overview Section End -->
+
+        <!-- Interactive Dashboard Section Start -->
+        <div class="dashboard-section" id="dashboard">
+            <div class="container-fluid">
+                <div class="section-header text-center">
+                    <p>Live Demonstration</p>
+                    <h2>AURA-AI Interactive Dashboard</h2>
+                </div>
+                <div class="dashboard-container">
+                    <div class="dashboard-controls">
+                        <div class="control-group">
+                            <label>Scenario:</label>
+                            <select id="scenarioSelect" class="form-control">
+                                <option value="normal">Normal Operations</option>
+                                <option value="incursion">Runway Incursion</option>
+                                <option value="weather">Low Visibility</option>
+                                <option value="emergency">Emergency Landing</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Time of Day:</label>
+                            <select id="timeSelect" class="form-control">
+                                <option value="day">Day</option>
+                                <option value="night">Night</option>
+                                <option value="dawn">Dawn</option>
+                                <option value="dusk">Dusk</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <button id="playPauseBtn" class="btn custom-btn">
+                                <i class="fas fa-play"></i> Start Simulation
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-main">
+                        <div class="runway-view">
+                            <canvas id="mainRunwayCanvas" width="800" height="500"></canvas>
+                            <div class="runway-overlay">
+                                <div class="weather-info">
+                                    <h4>Weather Conditions</h4>
+                                    <div class="weather-item">
+                                        <span>Visibility:</span>
+                                        <span id="visibility">10 km</span>
+                                    </div>
+                                    <div class="weather-item">
+                                        <span>Wind:</span>
+                                        <span id="windSpeed">15 kts</span>
+                                    </div>
+                                    <div class="weather-item">
+                                        <span>Ceiling:</span>
+                                        <span id="ceiling">Clear</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-sidebar">
+                            <div class="alert-panel">
+                                <h4>System Alerts</h4>
+                                <div id="alertsList" class="alerts-list">
+                                    <div class="alert-item success">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>All systems operational</span>
+                                        <small>12:34:56</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="aircraft-panel">
+                                <h4>Active Aircraft</h4>
+                                <div id="aircraftList" class="aircraft-list">
+                                    <!-- Aircraft will be populated by JavaScript -->
+                                </div>
+                            </div>
+                            
+                            <div class="atc-panel">
+                                <h4>ATC Communications</h4>
+                                <div id="atcFeed" class="atc-feed">
+                                    <div class="atc-message">
+                                        <span class="callsign">ATC:</span>
+                                        <span class="message">United 123, cleared for takeoff runway 24L</span>
+                                        <small>12:34:45</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Interactive Dashboard Section End -->
+
+        <!-- Technology Demos Section Start -->
+        <div class="tech-demos-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Technology Showcase</p>
+                    <h2>Core AI Capabilities</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="demo-card">
+                            <div class="demo-header">
+                                <i class="fas fa-eye"></i>
+                                <h3>Computer Vision Analysis</h3>
+                            </div>
+                            <div class="demo-content">
+                                <canvas id="visionCanvas" width="400" height="250"></canvas>
+                                <div class="demo-controls">
+                                    <button class="btn btn-sm custom-btn" onclick="toggleVisionDemo()">
+                                        <i class="fas fa-play"></i> Start Detection
+                                    </button>
+                                </div>
+                                <div class="demo-info">
+                                    <h4>Real-time Object Detection</h4>
+                                    <ul>
+                                        <li>Aircraft identification and tracking</li>
+                                        <li>Ground vehicle detection</li>
+                                        <li>Runway obstruction analysis</li>
+                                        <li>Weather condition assessment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 col-md-12">
+                        <div class="demo-card">
+                            <div class="demo-header">
+                                <i class="fas fa-microphone"></i>
+                                <h3>Audio Processing Engine</h3>
+                            </div>
+                            <div class="demo-content">
+                                <div class="audio-visualizer">
+                                    <canvas id="audioCanvas" width="400" height="150"></canvas>
+                                </div>
+                                <div class="demo-controls">
+                                    <button class="btn btn-sm custom-btn" onclick="toggleAudioDemo()">
+                                        <i class="fas fa-play"></i> Analyze Communication
+                                    </button>
+                                </div>
+                                <div class="demo-info">
+                                    <h4>ATC Communication Analysis</h4>
+                                    <ul>
+                                        <li>Speech-to-text conversion</li>
+                                        <li>Intent recognition</li>
+                                        <li>Clarity assessment</li>
+                                        <li>Multi-language support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="demo-card">
+                            <div class="demo-header">
+                                <i class="fas fa-network-wired"></i>
+                                <h3>Sensor Fusion Visualization</h3>
+                            </div>
+                            <div class="demo-content">
+                                <div class="sensor-grid">
+                                    <div class="sensor-item">
+                                        <h4>Radar Data</h4>
+                                        <canvas id="radarCanvas" width="200" height="200"></canvas>
+                                        <div class="sensor-status active">Active</div>
+                                    </div>
+                                    <div class="sensor-item">
+                                        <h4>GPS Tracking</h4>
+                                        <canvas id="gpsCanvas" width="200" height="200"></canvas>
+                                        <div class="sensor-status active">Active</div>
+                                    </div>
+                                    <div class="sensor-item">
+                                        <h4>Weather Sensors</h4>
+                                        <canvas id="weatherCanvas" width="200" height="200"></canvas>
+                                        <div class="sensor-status active">Active</div>
+                                    </div>
+                                    <div class="sensor-item">
+                                        <h4>Ground Surveillance</h4>
+                                        <canvas id="groundCanvas" width="200" height="200"></canvas>
+                                        <div class="sensor-status active">Active</div>
+                                    </div>
+                                </div>
+                                <div class="fusion-result">
+                                    <h4>Integrated Analysis</h4>
+                                    <canvas id="fusionCanvas" width="600" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Technology Demos Section End -->
+
+        <!-- Case Studies Section Start -->
+        <div class="case-studies-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Success Stories</p>
+                    <h2>Real-World Impact</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="case-study-card">
+                            <div class="case-study-header">
+                                <h3>Major International Airport</h3>
+                                <span class="case-study-location">Europe</span>
+                            </div>
+                            <div class="case-study-content">
+                                <div class="case-study-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">87%</span>
+                                        <span class="stat-label">Reduction in incidents</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">$12M</span>
+                                        <span class="stat-label">Annual savings</span>
+                                    </div>
+                                </div>
+                                <p>Implementation of AURA-AI resulted in dramatic improvement in runway safety, with near-elimination of incursion events and significant operational cost savings.</p>
+                                <div class="case-study-features">
+                                    <span class="feature-tag">Computer Vision</span>
+                                    <span class="feature-tag">ATC Integration</span>
+                                    <span class="feature-tag">Weather Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="case-study-card">
+                            <div class="case-study-header">
+                                <h3>Regional Hub Airport</h3>
+                                <span class="case-study-location">North America</span>
+                            </div>
+                            <div class="case-study-content">
+                                <div class="case-study-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">94%</span>
+                                        <span class="stat-label">Faster response times</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">45%</span>
+                                        <span class="stat-label">Improved efficiency</span>
+                                    </div>
+                                </div>
+                                <p>Enhanced situational awareness and predictive capabilities enabled proactive safety measures, preventing multiple potential incidents during challenging weather conditions.</p>
+                                <div class="case-study-features">
+                                    <span class="feature-tag">Predictive AI</span>
+                                    <span class="feature-tag">Sensor Fusion</span>
+                                    <span class="feature-tag">Real-time Alerts</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="case-study-card">
+                            <div class="case-study-header">
+                                <h3>Military Air Base</h3>
+                                <span class="case-study-location">Asia-Pacific</span>
+                            </div>
+                            <div class="case-study-content">
+                                <div class="case-study-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">100%</span>
+                                        <span class="stat-label">Mission success rate</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">0</span>
+                                        <span class="stat-label">Safety incidents</span>
+                                    </div>
+                                </div>
+                                <p>Critical military operations require absolute precision. AURA-AI provided the reliability and accuracy needed for complex multi-aircraft operations in challenging environments.</p>
+                                <div class="case-study-features">
+                                    <span class="feature-tag">Multi-Aircraft</span>
+                                    <span class="feature-tag">Night Operations</span>
+                                    <span class="feature-tag">Secure Communications</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Case Studies Section End -->
+
+        <!-- Technical Specifications Section Start -->
+        <div class="tech-specs-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Technical Details</p>
+                    <h2>System Specifications</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="spec-category">
+                            <h3>Hardware Requirements</h3>
+                            <div class="spec-list">
+                                <div class="spec-item">
+                                    <span class="spec-label">Processing Unit:</span>
+                                    <span class="spec-value">NVIDIA RTX 4090 or equivalent</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Memory:</span>
+                                    <span class="spec-value">64GB DDR5 RAM minimum</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Storage:</span>
+                                    <span class="spec-value">2TB NVMe SSD</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Network:</span>
+                                    <span class="spec-value">10Gbps Ethernet</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Cameras:</span>
+                                    <span class="spec-value">4K resolution, 60fps</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Sensors:</span>
+                                    <span class="spec-value">Radar, LiDAR, Weather stations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="spec-category">
+                            <h3>Software Capabilities</h3>
+                            <div class="spec-list">
+                                <div class="spec-item">
+                                    <span class="spec-label">AI Framework:</span>
+                                    <span class="spec-value">TensorFlow 2.x, PyTorch</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Computer Vision:</span>
+                                    <span class="spec-value">YOLO v8, OpenCV</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Audio Processing:</span>
+                                    <span class="spec-value">Whisper ASR, NLP models</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Response Time:</span>
+                                    <span class="spec-value">&lt; 200ms end-to-end</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Accuracy:</span>
+                                    <span class="spec-value">99.7% object detection</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Integration:</span>
+                                    <span class="spec-value">REST API, WebSocket</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <div class="api-documentation">
+                            <h3>API Documentation</h3>
+                            <div class="api-tabs">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#endpoints">Endpoints</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#authentication">Authentication</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#examples">Examples</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="endpoints" class="tab-pane active">
+                                        <div class="api-endpoint">
+                                            <div class="endpoint-method">GET</div>
+                                            <div class="endpoint-path">/api/v1/runway/status</div>
+                                            <div class="endpoint-description">Get current runway status and active aircraft</div>
+                                        </div>
+                                        <div class="api-endpoint">
+                                            <div class="endpoint-method">POST</div>
+                                            <div class="endpoint-path">/api/v1/alerts/subscribe</div>
+                                            <div class="endpoint-description">Subscribe to real-time alert notifications</div>
+                                        </div>
+                                        <div class="api-endpoint">
+                                            <div class="endpoint-method">GET</div>
+                                            <div class="endpoint-path">/api/v1/analytics/incidents</div>
+                                            <div class="endpoint-description">Retrieve incident analytics and reports</div>
+                                        </div>
+                                    </div>
+                                    <div id="authentication" class="tab-pane">
+                                        <pre><code>Authorization: Bearer &lt;your-api-key&gt;
+Content-Type: application/json</code></pre>
+                                        <p>All API requests require a valid API key. Contact our team for access credentials.</p>
+                                    </div>
+                                    <div id="examples" class="tab-pane">
+                                        <pre><code>curl -X GET "https://api.aura-ai.com/v1/runway/status" \
+  -H "Authorization: Bearer your-api-key" \
+  -H "Content-Type: application/json"</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Technical Specifications Section End -->
+
+        <!-- Contact Section Start -->
+        <div class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Get Started</p>
+                    <h2>Request AURA-AI Information</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="contact-form">
+                            <form id="auraContactForm">
+                                <div class="row">
+                                    

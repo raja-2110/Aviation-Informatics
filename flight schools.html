@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Flight Schools | Aviation Informatics</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Flight schools India, pilot training, DGCA approved, CPL, PPL, aviation academy" name="keywords">
+        <meta content="Discover top flight schools in India and worldwide. Compare DGCA-approved pilot training programs, fees, and career outcomes." name="description">
+
+        <!-- Favicon -->
+        <link href="img/channels4_profile.jpg" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            /* ===== FLIGHT SCHOOLS PAGE STYLES ===== */
+            .fs-hero {
+                position: relative;
+                width: 100%;
+                height: 55vh;
+                min-height: 380px;
+                overflow: hidden;
+            }
+            .fs-hero img {
+                width: 100%; height: 100%; object-fit: cover;
+            }
+            .fs-hero::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.75) 100%);
+            }
+            .fs-hero-text {
+                position: absolute;
+                inset: 0;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 0 20px;
+            }
+            .fs-hero-text h1 {
+                color: #fff;
+                font-size: 52px;
+                font-weight: 800;
+                margin-bottom: 12px;
+            }
+            .fs-hero-text h1 span { color: #fbaf32; }
+            .fs-hero-text p {
+                color: rgba(255,255,255,0.88);
+                font-size: 18px;
+                max-width: 680px;
+            }
+
+            /* ===== LIVE STATS BAR ===== */
+            .stats-bar {
+                background: #1a1a2e;
+                padding: 18px 0;
+            }
+            .stats-bar .stat-item {
+                text-align: center;
+                color: #fff;
+                padding: 0 10px;
+            }
+            .stats-bar .stat-num {
+                font-size: 28px;
+                font-weight: 800;
+                color: #fbaf32;
+                font-family: 'Nunito', sans-serif;
+            }
+            .stats-bar .stat-label {
+                font-size: 12px;
+                color: rgba(255,255,255,0.7);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            /* ===== FILTER PANEL ===== */
+            .filter-panel {
+                background: #f8f9fa;
+                padding: 30px 0 20px;
+                border-bottom: 2px solid #e9ecef;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            }
+            .filter-panel .filter-group label {
+                font-size: 12px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #555;
+                letter-spacing: 0.5px;
+                margin-bottom: 5px;
+            }
+            .filter-panel .form-control, .filter-panel .custom-select {
+                border-radius: 8px;
+                border: 1.5px solid #ddd;
+                font-size: 14px;
+                height: 42px;
+            }
+            .filter-panel .form-control:focus, .filter-panel .custom-select:focus {
+                border-color: #fbaf32;
+                box-shadow: 0 0 0 3px rgba(251,175,50,0.15);
+            }
+            .filter-btn {
+                background: #fbaf32;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                padding: 10px 24px;
+                font-weight: 700;
+                font-size: 14px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .filter-btn:hover { background: #e09d20; }
+            .reset-btn {
+                background: transparent;
+                color: #888;
+                border: 1.5px solid #ddd;
+                border-radius: 8px;
+                padding: 10px 18px;
+                font-size: 14px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .reset-btn:hover { border-color: #fbaf32; color: #fbaf32; }
+
+            /* ===== SCHOOL CARDS ===== */
+            .schools-section { padding: 50px 0 60px; }
+            .results-meta {
+                color: #888;
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+            .results-meta span { color: #fbaf32; font-weight: 700; }
+
+            .school-card {
+                background: #fff;
+                border-radius: 16px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                margin-bottom: 28px;
+                overflow: hidden;
+                transition: transform 0.3s, box-shadow 0.3s;
+                border: 1.5px solid #f0f0f0;
+            }
+            .school-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+            }
+            .school-card.hidden { display: none; }
+
+            .school-card-header {
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                padding: 22px 24px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .school-rank {
+                background: #fbaf32;
+                color: #fff;
+                font-size: 11px;
+                font-weight: 800;
+                padding: 4px 10px;
+                border-radius: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            .school-name {
+                color: #fff;
+                font-size: 18px;
+                font-weight: 700;
+                margin: 0;
+                font-family: 'Nunito', sans-serif;
+            }
+            .dgca-badge {
+                background: rgba(113,154,10,0.2);
+                border: 1px solid #719a0a;
+                color: #a8d040;
+                font-size: 11px;
+                font-weight: 700;
+                padding: 4px 10px;
+                border-radius: 20px;
+            }
+
+            .school-card-body { padding: 22px 24px; }
+            .school-location {
+                color: #888;
+                font-size: 13px;
+                margin-bottom: 14px;
+            }
+            .school-location i { color: #fbaf32; margin-right: 5px; }
+
+            .school-licenses {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                margin-bottom: 16px;
+            }
+            .license-tag {
+                background: #fff8ec;
+                border: 1px solid #fbaf32;
+                color: #c8882a;
+                font-size: 11px;
+                font-weight: 700;
+                padding: 3px 10px;
+                border-radius: 20px;
+            }
+
+            .school-info-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                margin-bottom: 16px;
+            }
+            .info-item { display: flex; flex-direction: column; }
+            .info-item-label {
+                font-size: 11px;
+                text-transform: uppercase;
+                color: #aaa;
+                letter-spacing: 0.5px;
+                margin-bottom: 2px;
+            }
+            .info-item-value {
+                font-size: 14px;
+                font-weight: 700;
+                color: #333;
+            }
+
+            .school-desc {
+                font-size: 13.5px;
+                color: #666;
+                line-height: 1.65;
+                margin-bottom: 18px;
+                border-left: 3px solid #fbaf32;
+                padding-left: 12px;
+            }
+
+            .school-card-footer {
+                padding: 16px 24px;
+                background: #fafafa;
+                border-top: 1px solid #f0f0f0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .school-fee {
+                font-size: 13px;
+                color: #555;
+            }
+            .school-fee strong { color: #333; font-size: 15px; }
+            .btn-school {
+                background: #fbaf32;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                padding: 9px 20px;
+                font-size: 13px;
+                font-weight: 700;
+                text-decoration: none;
+                transition: 0.3s;
+                display: inline-block;
+            }
+            .btn-school:hover { background: #e09d20; color: #fff; text-decoration: none; }
+            .btn-school-outline {
+                background: transparent;
+                color: #fbaf32;
+                border: 1.5px solid #fbaf32;
+                border-radius: 8px;
+                padding: 8px 18px;
+                font-size: 13px;
+                font-weight: 700;
+                text-decoration: none;
+                transition: 0.3s;
+                display: inline-block;
+            }
+            .btn-school-outline:hover { background: #fbaf32; color: #fff; text-decoration: none; }
+
+            /* ===== GLOBAL SCHOOLS TABLE ===== */
+            .global-section {
+                padding: 60px 0;
+                background: #f8f9fa;
+            }
+            .global-table {
+                background: #fff;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            }
+            .global-table table { margin: 0; }
+            .global-table thead { background: #1a1a2e; color: #fff; }
+            .global-table thead th {
+                padding: 14px 18px;
+                font-size: 13px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                border: none;
+            }
+            .global-table tbody tr:hover { background: #fff8ec; }
+            .global-table tbody td {
+                padding: 13px 18px;
+                font-size: 14px;
+                vertical-align: middle;
+                border-color: #f0f0f0;
+            }
+            .country-flag { font-size: 20px; margin-right: 6px; }
+            .status-approved {
+                background: #d4edda;
+                color: #155724;
+                padding: 3px 10px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 700;
+            }
+            .status-intl {
+                background: #cce5ff;
+                color: #004085;
+                padding: 3px 10px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 700;
+            }
+
+            /* ===== INFO CARDS ===== */
+            .license-info-section { padding: 60px 0; }
+            .license-card {
+                background: #fff;
+                border-radius: 14px;
+                padding: 30px 25px;
+                box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+                margin-bottom: 24px;
+                border-top: 4px solid #fbaf32;
+                transition: 0.3s;
+            }
+            .license-card:hover { transform: translateY(-3px); }
+            .license-card h4 {
+                color: #fbaf32;
+                font-size: 20px;
+                font-weight: 800;
+                margin-bottom: 10px;
+            }
+            .license-card .lc-full {
+                color: #555;
+                font-size: 12px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                margin-bottom: 12px;
+            }
+            .license-card ul {
+                padding-left: 18px;
+                color: #666;
+                font-size: 14px;
+            }
+            .license-card ul li { margin-bottom: 5px; }
+
+            @media (max-width: 767px) {
+                .fs-hero-text h1 { font-size: 32px; }
+                .school-info-grid { grid-template-columns: 1fr; }
+                .school-card-footer { flex-direction: column; align-items: flex-start; }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Nav Bar -->
+        <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">Aviation <span>Informatics</span></a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="flight schools.html" class="nav-item nav-link active">Flight Schools</a>
+                        <a href="team.html" class="nav-item nav-link">Team</a>
+                        <a href="course.html" class="nav-item nav-link">Courses</a>
+                        <a href="jobs.html" class="nav-item nav-link">Jobs</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu">
+                                <a href="https://www.flightradar24.com/" class="dropdown-item">Flight Radar</a>
+                                <a href="https://www.dgca.gov.in/digigov-portal/" class="dropdown-item">DGCA</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="fs-hero">
+            <img src="img/181118211616-banasthali-vidyapith-aviation-school-india-group.jpg" alt="Flight School">
+            <div class="fs-hero-text">
+                <h1>Find Your <span>Flight School</span></h1>
+                <p>Explore DGCA-approved flight training academies across India and premier institutions worldwide. Compare programs, fees, and start your pilot journey.</p>
+            </div>
+        </div>
+
+        <!-- Live Stats Bar -->
+        <div class="stats-bar">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-6 col-md-3 stat-item">
+                        <div class="stat-num" id="statSchools">0</div>
+                        <div class="stat-label">DGCA Approved Schools</div>
+                    </div>
+                    <div class="col-6 col-md-3 stat-item">
+                        <div class="stat-num" id="statPilots">0</div>
+                        <div class="stat-label">Licensed Pilots in India</div>
+                    </div>
+                    <div class="col-6 col-md-3 stat-item">
+                        <div class="stat-num" id="statHours">0</div>
+                        <div class="stat-label">Min Hours for CPL</div>
+                    </div>
+                    <div class="col-6 col-md-3 stat-item">
+                        <div class="stat-num" id="statAvgFee">0</div>
+                        <div class="stat-label">Avg CPL Fee (Lakh ₹)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Panel -->
+        <div class="filter-panel">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-6 col-md-3 filter-group mb-2">
+                        <label>Search School</label>
+                        <input type="text" class="form-control" id="searchInput" placeholder="School name or city...">
+                    </div>
+                    <div class="col-6 col-md-2 filter-group mb-2">
+                        <label>License Type</label>
+                        <select class="custom-select" id="licenseFilter">
+                            <option value="">All Licenses</option>
+                            <option value="PPL">PPL</option>
+                            <option value="CPL">CPL</option>
+                            <option value="ATPL">ATPL</option>
+                            <option value="IR">IR Rating</option>
+                            <option value="CFI">CFI</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-md-2 filter-group mb-2">
+                        <label>State / Region</label>
+                        <select class="custom-select" id="stateFilter">
+                            <option value="">All States</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-md-2 filter-group mb-2">
+                        <label>Fee Range</label>
+                        <select class="custom-select" id="feeFilter">
+                            <option value="">Any Budget</option>
+                            <option value="low">Under ₹50L</option>
+                            <option value="mid">₹50L – ₹80L</option>
+                            <option value="high">Above ₹80L</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-3 filter-group mb-2 d-flex gap-2">
+                        <button class="filter-btn mr-2" onclick="applyFilters()"><i class="fas fa-search mr-1"></i> Search</button>
+                        <button class="reset-btn" onclick="resetFilters()"><i class="fas fa-redo mr-1"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indian Schools Section -->
+        <div class="schools-section">
+            <div class="container">
+                <div class="section-header">
+                    <p>DGCA Approved</p>
+                    <h2>Flight Schools in India</h2>
+                </div>
+                <div class="results-meta" id="resultsMeta">Showing <span id="schoolCount">10</span> flight schools</div>
+
+                <div class="row" id="schoolsContainer">
+
+                    <!-- IGRUA -->
+                    <div class="col-lg-6" id="card-igrua" data-state="Uttar Pradesh" data-licenses="PPL,CPL,IR" data-fee="mid">
+                        <div class="school-card">
+                            <div class="school-card-header">
+                                <div>
+                                    <div class="school-rank mb-1">#1 Ranked India</div>
+                                    <h5 class="school-name">Indira Gandhi Rashtriya Uran Akademi (IGRUA)</h5>
+                                </div>
+                                <span class="dgca-badge"><i class="fas fa-check-circle mr-1"></i>DGCA Approved</span>
+                            </div>
+                            <div class="school-card-body">
+                                <p class="school-location"><i class="fas fa-map-marker-alt"></i> Fursatganj, Uttar Pradesh &nbsp;|&nbsp; <i class="fas fa-graduation-cap"></i> Est. 1985</p>
+                                <div class="school-licenses">
+                                    <span class="license-tag">SPL</span>
+                                    <span class="license-tag">PPL</span>
+                                    <span class="license-tag">CPL</span>
+                                    <span class="license-tag">IR Rating</span>
+                                    <span class="license-tag">Multi-Engine</span>
+                                </div>
+                                <div class="school-info-grid">
+                                    <div class="info-item">
+                                        <span class="info-item-label">Fleet Size</span>
+                                        <span class="info-item-value">20+ aircraft</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Training Aircraft</span>
+                                        <span class="info-item-value">Cessna 172, DA-40</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">CPL Duration</span>
+                                        <span class="info-item-value">2.5 – 3 Years</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Placement Rate</span>
+                                        <span class="info-item-value">~85%</span>
+                                    </div>
+                                </div>
+                                <p class="school-desc">India's premier government-run pilot training academy under the Ministry of Civil Aviation. Known for high safety standards, modern simulators and its ties to major Indian airlines including Air India and IndiGo.</p>
+                            </div>
+                            <div class="school-card-footer">
+                                <div class="school-fee">CPL Fee: <strong>₹55–65 Lakhs</strong></div>
+                                <div>
+                                    <a href="https://igrua.gov.in" target="_blank" class="btn-school-outline mr-2">Website</a>
+                                    <a href="contact.html" class="btn-school">Enquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chimes Aviation Academy -->
+                    <div class="col-lg-6" id="card-chimes" data-state="Gujarat" data-licenses="PPL,CPL,IR,Multi-Engine" data-fee="mid">
+                        <div class="school-card">
+                            <div class="school-card-header">
+                                <div>
+                                    <div class="school-rank mb-1">Top Rated</div>
+                                    <h5 class="school-name">Chimes Aviation Academy (CAA)</h5>
+                                </div>
+                                <span class="dgca-badge"><i class="fas fa-check-circle mr-1"></i>DGCA Approved</span>
+                            </div>
+                            <div class="school-card-body">
+                                <p class="school-location"><i class="fas fa-map-marker-alt"></i> Ahmedabad / Vadodara, Gujarat</p>
+                                <div class="school-licenses">
+                                    <span class="license-tag">PPL</span>
+                                    <span class="license-tag">CPL</span>
+                                    <span class="license-tag">IR Rating</span>
+                                    <span class="license-tag">Multi-Engine</span>
+                                    <span class="license-tag">CFI</span>
+                                </div>
+                                <div class="school-info-grid">
+                                    <div class="info-item">
+                                        <span class="info-item-label">Fleet Size</span>
+                                        <span class="info-item-value">25+ aircraft</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Training Aircraft</span>
+                                        <span class="info-item-value">Cessna 152/172, PA-28</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">CPL Duration</span>
+                                        <span class="info-item-value">2 – 3 Years</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Simulators</span>
+                                        <span class="info-item-value">Full-motion (FNPT II)</span>
+                                    </div>
+                                </div>
+                                <p class="school-desc">One of India's most reputed private flight academies with ISO certification and tie-ups with international airlines. Offers integrated CPL programs with ground school, simulator and flight training under one roof.</p>
+                            </div>
+                            <div class="school-card-footer">
+                                <div class="school-fee">CPL Fee: <strong>₹60–75 Lakhs</strong></div>
+                                <div>
+                                    <a href="https://www.chimesaviation.com" target="_blank" class="btn-school-outline mr-2">Website</a>
+                                    <a href="contact.html" class="btn-school">Enquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Madhya Pradesh Flying Club -->
+                    <div class="col-lg-6" id="card-mpfc" data-state="Madhya Pradesh" data-licenses="PPL,CPL" data-fee="low">
+                        <div class="school-card">
+                            <div class="school-card-header">
+                                <div>
+                                    <div class="school-rank mb-1">Est. 1951</div>
+                                    <h5 class="school-name">Madhya Pradesh Flying Club (MPFC)</h5>
+                                </div>
+                                <span class="dgca-badge"><i class="fas fa-check-circle mr-1"></i>DGCA Approved</span>
+                            </div>
+                            <div class="school-card-body">
+                                <p class="school-location"><i class="fas fa-map-marker-alt"></i> Indore / Bhopal, Madhya Pradesh</p>
+                                <div class="school-licenses">
+                                    <span class="license-tag">SPL</span>
+                                    <span class="license-tag">PPL</span>
+                                    <span class="license-tag">CPL</span>
+                                    <span class="license-tag">IR Rating</span>
+                                </div>
+                                <div class="school-info-grid">
+                                    <div class="info-item">
+                                        <span class="info-item-label">Fleet Size</span>
+                                        <span class="info-item-value">12+ aircraft</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Training Aircraft</span>
+                                        <span class="info-item-value">Cessna 172, DA-40</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">CPL Duration</span>
+                                        <span class="info-item-value">3 – 3.5 Years</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Est. Year</span>
+                                        <span class="info-item-value">1951</span>
+                                    </div>
+                                </div>
+                                <p class="school-desc">One of India's oldest flying clubs with over 70 years of training history. Operates from dedicated airstrips in Indore and Bhopal with experienced instructors and a strong alumni network in Indian aviation.</p>
+                            </div>
+                            <div class="school-card-footer">
+                                <div class="school-fee">CPL Fee: <strong>₹40–55 Lakhs</strong></div>
+                                <div>
+                                    <a href="contact.html" class="btn-school">Enquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redbird Aviation -->
+                    <div class="col-lg-6" id="card-redbird" data-state="Telangana" data-licenses="PPL,CPL,IR" data-fee="mid">
+                        <div class="school-card">
+                            <div class="school-card-header">
+                                <div>
+                                    <div class="school-rank mb-1">Modern Fleet</div>
+                                    <h5 class="school-name">Redbird Aviation Academy</h5>
+                                </div>
+                                <span class="dgca-badge"><i class="fas fa-check-circle mr-1"></i>DGCA Approved</span>
+                            </div>
+                            <div class="school-card-body">
+                                <p class="school-location"><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana</p>
+                                <div class="school-licenses">
+                                    <span class="license-tag">PPL</span>
+                                    <span class="license-tag">CPL</span>
+                                    <span class="license-tag">IR Rating</span>
+                                    <span class="license-tag">Night Rating</span>
+                                </div>
+                                <div class="school-info-grid">
+                                    <div class="info-item">
+                                        <span class="info-item-label">Fleet Size</span>
+                                        <span class="info-item-value">10+ aircraft</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Training Aircraft</span>
+                                        <span class="info-item-value">Cessna 172S, DA-40</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">CPL Duration</span>
+                                        <span class="info-item-value">2.5 – 3 Years</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Simulators</span>
+                                        <span class="info-item-value">Redbird FMX</span>
+                                    </div>
+                                </div>
+                                <p class="school-desc">A progressive flight training academy in Hyderabad featuring latest glass-cockpit aircraft and advanced Redbird simulation technology. Known for personalized training programs and flexible scheduling for cadets.</p>
+                            </div>
+                            <div class="school-card-footer">
+                                <div class="school-fee">CPL Fee: <strong>₹55–70 Lakhs</strong></div>
+                                <div>
+                                    <a href="contact.html" class="btn-school">Enquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wings Aviation -->
+                    <div class="col-lg-6" id="card-wings" data-state="Maharashtra" data-licenses="PPL,CPL,ATPL,IR" data-fee="high">
+                        <div class="school-card">
+                            <div class="school-card-header">
+                                <div>
+                                    <div class="school-rank mb-1">ATPL Training</div>
+                                    <h5 class="school-name">Bombay Flying Club (BFC)</h5>
+                                </div>
+                                <span class="dgca-badge"><i class="fas fa-check-circle mr-1"></i>DGCA Approved</span>
+                            </div>
+                            <div class="school-card-body">
+                                <p class="school-location"><i class="fas fa-map-marker-alt"></i> Juhu, Mumbai, Maharashtra &nbsp;|&nbsp; <i class="fas fa-graduation-cap"></i> Est. 1928</p>
+                                <div class="school-licenses">
+                                    <span class="license-tag">PPL</span>
+                                    <span class="license-tag">CPL</span>
+                                    <span class="license-tag">ATPL</span>
+                                    <span class="license-tag">IR Rating</span>
+                                    <span class="license-tag">CFI</span>
+                                </div>
+                                <div class="school-info-grid">
+                                    <div class="info-item">
+                                        <span class="info-item-label">Fleet Size</span>
+                                        <span class="info-item-value">30+ aircraft</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Training Aircraft</span>
+                                        <span class="info-item-value">Cessna, Beechcraft, PA-34</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Est. Year</span>
+                                        <span class="info-item-value">1928</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Placement Rate</span>
+                                        <span class="info-item-value">~90%</span>
+                                    </div>
+                                </div>
+                                <p class="school-desc">Asia's oldest flying club and one of India's most prestigious. Located at historic Juhu aerodrome in Mumbai, BFC has trained generations of Indian pilots including legends of the industry. Full ATPL pathway available.</p>
+                            </div>
+                            <div class="school-card-footer">
+                                <div class="school-fee">CPL Fee: <strong>₹80–95 Lakhs</strong></div>
+                                <div>
+                                    <a href="https://www.bombayingclub.com" target="_blank" class="btn-school-outline mr-2">Website</a>
+                                    <a href="contact.html" class="btn-school">Enquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carver Aviation -->
+                    <div class="col-lg-6" id="card-carver" data-state="Karnataka" data-licenses="PPL,CPL,IR" data-fee="mid">
+                        <div class="school-card">
+                            <div class="school-card-header">
+                                <div>
+                                    <div class="school-rank mb-1">South India</div>
+                                    <h5 class="school-name">Carver Aviation Pvt. Ltd.</h5>
+                                </div>
+                                <span class="dgca-badge"><i class="fas fa-check-circle mr-1"></i>DGCA Approved</span>
+                            </div>
+                            <div class="school-card-body">
+                                <p class="school-location"><i class="fas fa-map-marker-alt"></i> Bangalore, Karnataka</p>
+                                <div class="school-licenses">
+                                    <span class="license-tag">PPL</span>
+                                    <span class="license-tag">CPL</span>
+                                    <span class="license-tag">IR Rating</span>
+                                    <span class="license-tag">Multi-Engine</span>
+                                </div>
+                                <div class="school-info-grid">
+                                    <div class="info-item">
+                                        <span class="info-item-label">Fleet Size</span>
+                                        <span class="info-item-value">15+ aircraft</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Training Aircraft</span>
+                                        <span class="info-item-value">DA-40 NG, DA-42</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">CPL Duration</span>
+                                        <span class="info-item-value">2.5 Years</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Annual Intake</span>
+                                        <span class="info-item-value">~60 Cadets/Year</span>
+                                    </div>
+                                </div>
+                                <p class="school-desc">Bangalore-based modern flight school using Diamond Aircraft exclusively. Offers a structured integrated CPL program with rigorous ground school conducted in collaboration with CAAS Singapore standards.</p>
+                            </div>
+                            <div class="school-card-footer">
+                                <div class="school-fee">CPL Fee: <strong>₹65–80 Lakhs</strong></div>
+                                <div>
+                                    <a href="https://www.carveraviation.com" target="_blank" class="btn-school-outline mr-2">Website</a>
+                                    <a href="contact.html" class="btn-school">Enquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Government Aviation Training Institute -->
+                    <div class="col-lg-6" id="card-gati" data-state="Maharashtra" data-licenses="PPL,CPL" data-fee="low">
+                        <div class="school-card">
+                            <div class="school-card-header">
+                                <div>
+                                    <div class="school-rank mb-1">Govt. Institute</div>
+                                    <h5 class="school-name">Govt. Aviation Training Institute (GATI)</h5>
+                                </div>
+                                <span class="dgca-badge"><i class="fas fa-check-circle mr-1"></i>DGCA Approved</span>
+                            </div>
+                            <div class="school-card-body">
+                                <p class="school-location"><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra &nbsp;|&nbsp; <i class="fas fa-graduation-cap"></i> Est. 1949</p>
+                                <div class="school-licenses">
+                                    <span class="license-tag">PPL</span>
+                                    <span class="license-tag">CPL</span>
+                                    <span class="license-tag">Night Rating</span>
+                                </div>
+                                <div class="school-info-grid">
+                                    <div class="info-item">
+                                        <span class="info-item-label">Category</span>
+                                        <span class="info-item-value">Government</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Training Aircraft</span>
+                                        <span class="info-item-value">Cessna 152/172</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">CPL Duration</span>
+                                        <span class="info-item-value">3 Years</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Subsidy</span>
+                                        <span class="info-item-value">Govt. subsidized</span>
+                                    </div>
+                                </div>
+                                <p class="school-desc">A government-owned flight training institution offering subsidized pilot training. One of the most affordable CPL programs in India with a long history of producing commercial pilots for Indian carriers.</p>
+                            </div>
+                            <div class="school-card-footer">
+                                <div class="school-fee">CPL Fee: <strong>₹30–45 Lakhs</strong></div>
+                                <div>
+                                    <a href="contact.html" class="btn-school">Enquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ahmedabad Aviation Academy -->
+                    <div class="col-lg-6" id="card-aaa" data-state="Gujarat" data-licenses="PPL,CPL" data-fee="low">
+                        <div class="school-card">
+                            <div class="school-card-header">
+                                <div>
+                                    <div class="school-rank mb-1">Budget Friendly</div>
+                                    <h5 class="school-name">Ahmedabad Aviation & Aeronautics Ltd. (AAA)</h5>
+                                </div>
+                                <span class="dgca-badge"><i class="fas fa-check-circle mr-1"></i>DGCA Approved</span>
+                            </div>
+                            <div class="school-card-body">
+                                <p class="school-location"><i class="fas fa-map-marker-alt"></i> Ahmedabad, Gujarat</p>
+                                <div class="school-licenses">
+                                    <span class="license-tag">SPL</span>
+                                    <span class="license-tag">PPL</span>
+                                    <span class="license-tag">CPL</span>
+                                </div>
+                                <div class="school-info-grid">
+                                    <div class="info-item">
+                                        <span class="info-item-label">Fleet Size</span>
+                                        <span class="info-item-value">8+ aircraft</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Training Aircraft</span>
+                                        <span class="info-item-value">Cessna 172</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">CPL Duration</span>
+                                        <span class="info-item-value">3 – 3.5 Years</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-item-label">Annual Intake</span>
+                                        <span class="info-item-value">~40 Cadets/Year</span>
+                                    </div>
+                                </div>
+                                <p class="school-desc">An affordable and reputable flight training school in Gujarat. Offers straightforward CPL programmes ideal for students seeking quality training without premium pricing. Strong focus on individual cadet attention.</p>
+                            </div>
+                            <div class="school-card-footer">
+                                <div class="school-fee">CPL Fee: <strong>₹35–50 Lakhs</strong></div>
+                                <div>
+                                    <a href="contact.html" class="btn-school">Enquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /row -->
+                <div id="noResults" style="display:none; text-align:center; padding:40px 0; color:#888;">
+                    <i class="fas fa-search fa-2x mb-3 d-block" style="color:#ddd;"></i>
+                    No schools found for your criteria. Try adjusting the filters.
+                </div>
+            </div>
+        </div><!-- /schools-section -->
+
+        <!-- License Types Info -->
+        <div class="license-info-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Know Your Goals</p>
+                    <h2>Pilot License Pathways</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="license-card">
+                            <h4>SPL</h4>
+                            <div class="lc-full">Student Pilot License</div>
+                            <ul>
+                                <li>Minimum age: 16 years</li>
+                                <li>Class 2 Medical required</li>
+                                <li>Solo flight authorization</li>
+                                <li>~₹2–5 Lakhs cost</li>
+                                <li>First step to aviation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="license-card">
+                            <h4>PPL</h4>
+                            <div class="lc-full">Private Pilot License</div>
+                            <ul>
+                                <li>Minimum age: 17 years</li>
+                                <li>40+ flight hours required</li>
+                                <li>Class 2 Medical required</li>
+                                <li>Fly for leisure / personal use</li>
+                                <li>~₹8–15 Lakhs cost</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="license-card">
+                            <h4>CPL</h4>
+                            <div class="lc-full">Commercial Pilot License</div>
+                            <ul>
+                                <li>Minimum age: 18 years</li>
+                                <li>200+ flight hours required</li>
+                                <li>Class 1 Medical required</li>
+                                <li>Fly commercially for an airline</li>
+                                <li>~₹40–90 Lakhs total cost</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Schools Table -->
+        <div class="global-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Worldwide</p>
+                    <h2>Top Global Flight Schools</h2>
+                </div>
+                <div class="global-table">
+                    <table class="table table-bordered table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>School</th>
+                                <th>Country</th>
+                                <th>Licenses Offered</th>
+                                <th>Approx. CPL Fee</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><strong>ATP Flight School</strong></td>
+                                <td><span class="country-flag">🇺🇸</span>USA</td>
+                                <td>PPL, CPL, ATPL, CFI, IR</td>
+                                <td>USD 69,995 (~₹58L)</td>
+                                <td><span class="status-intl">FAA Certified</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><strong>CAE Oxford Aviation Academy</strong></td>
+                                <td><span class="country-flag">🇬🇧</span>UK / Global</td>
+                                <td>PPL, CPL, ATPL (Integrated)</td>
+                                <td>USD 100,000+ (~₹84L)</td>
+                                <td><span class="status-intl">EASA / FAA</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><strong>Emirates Aviation University</strong></td>
+                                <td><span class="country-flag">🇦🇪</span>UAE</td>
+                                <td>PPL, CPL, ATPL, MCC</td>
+                                <td>AED 320,000 (~₹72L)</td>
+                                <td><span class="status-intl">GCAA Approved</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><strong>L3Harris Airline Academy</strong></td>
+                                <td><span class="country-flag">🇺🇸</span>USA / UK</td>
+                                <td>CPL, ATPL, MCC, Type Rating</td>
+                                <td>USD 90,000 (~₹75L)</td>
+                                <td><span class="status-intl">FAA / EASA</span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><strong>ENAC – École Nationale de l'Aviation Civile</strong></td>
+                                <td><span class="country-flag">🇫🇷</span>France</td>
+                                <td>CPL, ATPL, Air Traffic Control</td>
+                                <td>EUR 40,000 (~₹36L)</td>
+                                <td><span class="status-intl">EASA Approved</span></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td><strong>Flight Training Adelaide (FTA)</strong></td>
+                                <td><span class="country-flag">🇦🇺</span>Australia</td>
+                                <td>PPL, CPL, IR, ATPL</td>
+                                <td>AUD 85,000 (~₹47L)</td>
+                                <td><span class="status-intl">CASA Approved</span></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td><strong>Singapore Flying College (SFC)</strong></td>
+                                <td><span class="country-flag">🇸🇬</span>Singapore</td>
+                                <td>PPL, CPL, ATPL (SIA Cadet)</td>
+                                <td>SGD 130,000 (~₹81L)</td>
+                                <td><span class="status-intl">CAAS Approved</span></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td><strong>Air Asia Aviation Academy</strong></td>
+                                <td><span class="country-flag">🇲🇾</span>Malaysia</td>
+                                <td>CPL, ATPL, MCC</td>
+                                <td>MYR 400,000 (~₹73L)</td>
+                                <td><span class="status-intl">CAAM Approved</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-muted mt-3" style="font-size:13px;"><i class="fas fa-info-circle mr-1" style="color:#fbaf32;"></i> Fees are approximate and may vary based on course structure, hostel, visa, and living costs. Always verify with the school directly.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="footer-contact">
+                                    <h2>Aviation Support Hub</h2>
+                                    <p><i class="fa fa-headset"></i>24/7 Digital Assistance</p>
+                                    <p><i class="fa fa-envelope"></i>support@aviationinformatics.com</p>
+                                    <p><i class="fa fa-globe"></i>Serving the Global Aviation Community</p>
+                                    <div class="footer-social">
+                                        <a href=""><i class="fab fa-twitter"></i></a>
+                                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a href=""><i class="fab fa-youtube"></i></a>
+                                        <a href=""><i class="fab fa-instagram"></i></a>
+                                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="footer-link">
+                                    <h2>Quick Links</h2>
+                                    <a href="">Terms of use</a>
+                                    <a href="">Privacy policy</a>
+                                    <a href="">Cookies</a>
+                                    <a href="">Help</a>
+                                    <a href="">FQAs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="footer-newsletter">
+                            <h2>Newsletter</h2>
+                            <p>Subscribe to our newsletter for flight school updates, seat availability alerts, and scholarship opportunities.</p>
+                            <div class="form">
+                                <input class="form-control" placeholder="Email goes here">
+                                <button class="btn custom-btn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <p>Copyright &copy; <a href="#">Aviation Informatics</a>, All Right Reserved.</p>
+                    <p>Designed By <a href="">TedPan designers</a></p>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            // ===== ANIMATED COUNTERS =====
+            function animateCounter(id, target, suffix, duration) {
+                const el = document.getElementById(id);
+                const step = target / (duration / 16);
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) { current = target; clearInterval(timer); }
+                    el.textContent = Math.floor(current).toLocaleString() + (suffix || '');
+                }, 16);
+            }
+            window.addEventListener('load', () => {
+                animateCounter('statSchools', 35, '+', 1500);
+                animateCounter('statPilots', 8200, '+', 2000);
+                animateCounter('statHours', 200, '', 1200);
+                animateCounter('statAvgFee', 65, 'L', 1500);
+            });
+
+            // ===== FILTER LOGIC =====
+            const allCards = Array.from(document.querySelectorAll('#schoolsContainer > div'));
+
+            function applyFilters() {
+                const search = document.getElementById('searchInput').value.toLowerCase();
+                const license = document.getElementById('licenseFilter').value;
+                const state = document.getElementById('stateFilter').value;
+                const fee = document.getElementById('feeFilter').value;
+
+                let visible = 0;
+                allCards.forEach(card => {
+                    const cardState = card.getAttribute('data-state') || '';
+                    const cardLicenses = card.getAttribute('data-licenses') || '';
+                    const cardFee = card.getAttribute('data-fee') || '';
+                    const cardText = card.textContent.toLowerCase();
+
+                    const matchSearch = !search || cardText.includes(search);
+                    const matchLicense = !license || cardLicenses.includes(license);
+                    const matchState = !state || cardState === state;
+                    const matchFee = !fee || cardFee === fee;
+
+                    if (matchSearch && matchLicense && matchState && matchFee) {
+                        card.classList.remove('d-none');
+                        visible++;
+                    } else {
+                        card.classList.add('d-none');
+                    }
+                });
+
+                document.getElementById('schoolCount').textContent = visible;
+                document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+            }
+
+            function resetFilters() {
+                document.getElementById('searchInput').value = '';
+                document.getElementById('licenseFilter').value = '';
+                document.getElementById('stateFilter').value = '';
+                document.getElementById('feeFilter').value = '';
+                applyFilters();
+            }
+
+            // Live search on typing
+            document.getElementById('searchInput').addEventListener('keyup', applyFilters);
+            document.getElementById('licenseFilter').addEventListener('change', applyFilters);
+            document.getElementById('stateFilter').addEventListener('change', applyFilters);
+            document.getElementById('feeFilter').addEventListener('change', applyFilters);
+        </script>
+    </body>
+</html>
